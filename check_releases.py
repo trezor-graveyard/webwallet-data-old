@@ -63,5 +63,7 @@ if __name__ == '__main__':
 
     if ok:
         print "EVERYTHING IS OK"
+        exit(0)
     else:
         print "SOME PROBLEMS FOUND"
+        exit(1)
