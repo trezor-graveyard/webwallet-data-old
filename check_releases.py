@@ -2,6 +2,7 @@
 
 import os
 import json
+import urllib2
 
 def check_plugin():
     patterns = ['browser-plugin-trezor-%(version)s.i386.rpm',
@@ -40,19 +41,30 @@ def check_plugin():
     return ok
 
 def check_firmware():
+    print "Checking firmware availability"
+    print "------------------------------"
+
     ok = True
     releases = json.loads(open('firmware/releases.json', 'r').read())
     for r in releases:
-        firmware = r['url'][len('/data/'):]
+        firmware = r['url']
         version = '.'.join([ str(x) for x in r['version'] ])
 
         if version not in firmware:
             print "Missing '%s' in '%s'" % (version, firmware)
             ok = False
 
-        if not os.path.exists(firmware):
-            print "Missing firmware file", firmware
-            ok = False
+        print "Checking", firmware
+        if firmware.startswith('http'):
+            ret = urllib2.urlopen(firmware)
+            if ret.code != 200:
+                print "Missing firmware file", firmware
+                ok = False
+
+        else:
+            if not os.path.exists(firmware[len('/data/'):]):
+                print "Missing firmware file", firmware
+                ok = False
 
     return ok
 
@@ -67,3 +79,4 @@ if __name__ == '__main__':
     else:
         print "SOME PROBLEMS FOUND"
         exit(1)
+
