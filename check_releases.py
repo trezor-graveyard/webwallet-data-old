@@ -3,6 +3,7 @@
 import os
 import json
 import urllib2
+import binascii
 
 def check_plugin():
     patterns = ['browser-plugin-trezor-%(version)s.i386.rpm',
@@ -60,11 +61,25 @@ def check_firmware():
             if ret.code != 200:
                 print "Missing firmware file", firmware
                 ok = False
+                data = ''
+            else:
+                data = ret.read()
 
         else:
             if not os.path.exists(firmware[len('/data/'):]):
                 print "Missing firmware file", firmware
                 ok = False
+                data = ''
+            else:
+                data = open(firmware[len('/data/'):], 'r').read()
+
+        if not data.startswith(binascii.hexlify('TRZR')):
+            print "Corrupted file header:", firmware
+            ok = False
+
+        if len(data) / 2 > 512*1024 - 32*1024: # Firmware - header - signatures
+            print "File size is over limit:", firmware
+            ok = False
 
     return ok
 
