@@ -3,7 +3,7 @@
 		"required": true,
 		"version": [1, 0, 0],
 		"min_version": [0, 0, 0],
-		"min_plugin_version": [1, 0, 4],
+		"min_plugin_version": [1, 0, 5],
 		"url": "http://cargo.gk2.sk/trezor-1.0.0.bin.hex",
 		"changelog": ""
 	}
