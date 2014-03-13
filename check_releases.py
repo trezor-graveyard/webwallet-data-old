@@ -8,6 +8,7 @@ import binascii
 def check_plugin():
     patterns = ['browser-plugin-trezor-%(version)s.i386.rpm',
                 'browser-plugin-trezor-%(version)s.x86_64.rpm',
+                'trezor-plugin-%(version)s.dmg',
                 'BitcoinTrezorPlugin-%(version)s.msi',
                 'browser-plugin-trezor_%(version)s_i386.deb',
                 'browser-plugin-trezor_%(version)s_amd64.deb']
