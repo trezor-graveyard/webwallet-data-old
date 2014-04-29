@@ -5,10 +5,7 @@
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
 		"url": "/data/firmware/trezor-1.0.0.bin.hex",
-		"changelog":
-"* Stable release, mandatory update
-* Added support for streaming of transactions into the device
-* Remove all current limits on size of signed transaction"
+		"changelog": "* Stable release, mandatory update\n* Added support for streaming of transactions into the device\n* Remove all current limits on size of signed transaction"
 	},
 	{
 		"required": true,
@@ -16,7 +13,6 @@
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
 		"url": "http://cargo.gk2.sk/trezor-0.1.0.bin.hex",
-		"changelog":
-"Initial developer release containing bare minimum of Trezor features and simple signing of transactions (limited to 8 inputs per tx)."
+		"changelog": "Initial developer release containing bare minimum of Trezor features and simple signing of transactions (limited to 8 inputs per tx)."
 	}
 ]
