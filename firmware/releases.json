@@ -5,7 +5,7 @@
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
 		"url": "/data/firmware/trezor-1.1.0.bin.hex",
-		"changelog": "* Stable release, optional update\n* Minor UI fixes\n* Better handle unexpected messages\n* Add support AES support"
+		"changelog": "* Stable release, optional update\n* Minor UI fixes\n* Better handling of unexpected messages\n* Added AES support"
 	},
 	{
 		"required": true,
@@ -13,6 +13,6 @@
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
 		"url": "/data/firmware/trezor-1.0.0.bin.hex",
-		"changelog": "* Stable release, mandatory update\n* Added support for streaming of transactions into the device\n* Remove all current limits on size of signed transaction"
+		"changelog": "* Stable release, mandatory update\n* Added support for streaming of transactions into the device\n* Removed all current limits on size of signed transaction"
 	}
 ]
