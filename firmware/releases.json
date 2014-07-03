@@ -1,10 +1,20 @@
 [
 	{
 		"required": false,
+		"version": [1, 2, 0],
+		"min_version": [0, 0, 0],
+		"min_plugin_version": [1, 0, 5],
+		"url": "/data/firmware/trezor-1.2.0.bin.hex",
+		"fingerprint": "0eec6fd320730acfa40963f0f470a47109378663907cc78b9c5797c19938c873",
+		"changelog": "* Stable release, optional update\n* Fix false positives for fee warning\n* Better UI for signing/verifying messages\n* Smaller firmware size"
+	},
+	{
+		"required": false,
 		"version": [1, 1, 0],
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
 		"url": "/data/firmware/trezor-1.1.0.bin.hex",
+		"fingerprint": "a1709ead62659851933830f494cf9aa40047d1f098955aa93bd483b92df88c8e",
 		"changelog": "* Stable release, optional update\n* Minor UI fixes\n* Better handling of unexpected messages\n* Added AES support"
 	},
 	{
@@ -13,6 +23,7 @@
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
 		"url": "/data/firmware/trezor-1.0.0.bin.hex",
+		"fingerprint": "79371ee2ed2db8489aa4a5bce6907c24afc6de47e9658fef4cc12e2d902d9c51",
 		"changelog": "* Stable release, mandatory update\n* Added support for streaming of transactions into the device\n* Removed all current limits on size of signed transaction"
 	}
 ]
