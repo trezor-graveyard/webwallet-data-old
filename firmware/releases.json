@@ -1,5 +1,14 @@
 [
 	{
+		"required": true,
+		"version": [1, 2, 1],
+		"min_version": [0, 0, 0],
+		"min_plugin_version": [1, 0, 5],
+		"url": "/data/firmware/trezor-1.2.1.bin.hex",
+		"fingerprint": "0f8685ee46632162b549eb22b99a1e4e013d6796ae536ea6acb877a491f564f6",
+		"changelog": "* Stable release, mandatory update\n* Added stack overflow protection\n* Added compatibility with TREZOR Bridge"
+	},
+	{
 		"required": false,
 		"version": [1, 2, 0],
 		"min_version": [0, 0, 0],
