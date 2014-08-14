@@ -21,6 +21,8 @@ def check_plugin():
     for v in versions:
         if not os.path.isdir(os.path.join('plugin', v)):
             continue
+        if v == 'test': # skip test directory
+            continue
 
         latest = v
         print "Checking files for version", v
