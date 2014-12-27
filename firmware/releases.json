@@ -1,5 +1,15 @@
 [
 	{
+		"required": false,
+		"version": [1, 3, 0],
+		"min_version": [0, 0, 0],
+		"min_plugin_version": [1, 0, 5],
+		"url": "/data/firmware/trezor-1.3.0.bin.hex",
+		"fingerprint": "1d417e1e99a4880f7e03b991cf318eebe7b6cb453d2f55b8112adc5fd1a8293c",
+		"changelog": "* Stable release, optional update\n* Added multisig support\n* Added visual validation of receiving address\n* Added ECIES encryption capabilities",
+                "notes": "http://satoshilabs.com/news/"
+	},
+	{
 		"required": true,
 		"version": [1, 2, 1],
 		"min_version": [0, 0, 0],
