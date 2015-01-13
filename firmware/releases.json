@@ -7,7 +7,7 @@
 		"url": "/data/firmware/trezor-1.3.0.bin.hex",
 		"fingerprint": "1d417e1e99a4880f7e03b991cf318eebe7b6cb453d2f55b8112adc5fd1a8293c",
 		"changelog": "* Stable release, optional update\n* Added multisig support\n* Added visual validation of receiving address\n* Added ECIES encryption capabilities",
-                "notes": "http://satoshilabs.com/news/"
+                "notes": "http://satoshilabs.com/news/2015-01-13-trezor-firmware-1-3-0-update-multisig"
 	},
 	{
 		"required": true,
