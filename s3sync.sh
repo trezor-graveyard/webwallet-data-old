@@ -4,7 +4,7 @@
 # Install awscli (pip install awscli)
 # Configure access credentials (aws configure), region is "eu-central-1"
 
-bucket=data.mytrezor.com
+bucket=mytrezor
 repository=webwallet-data
 github=https://github.com/trezor/$repository/archive/master.zip
 
