@@ -1,6 +1,16 @@
 [
 	{
 		"required": false,
+		"version": [1, 3, 4],
+		"min_version": [0, 0, 0],
+		"min_plugin_version": [1, 0, 5],
+		"url": "https://mytrezor.s3.amazonaws.com/firmware/trezor-1.3.4.bin.hex",
+		"fingerprint": "49e044eec84a9c210a09319d27a3ab8ba889ddeaa4d68f99d163f65267fce134",
+		"changelog": "* Stable release, optional update\n* Screensaver active on ClearSession message\n* Support for NIST P-256 curve\n* Updated SignIdentity to v2 format\n* Show seconds counter during PIN lockdown\n* Updated maxfee per kb for coins",
+		"notes": ""
+	},
+	{
+		"required": false,
 		"version": [1, 3, 3],
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
