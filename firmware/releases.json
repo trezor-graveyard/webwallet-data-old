@@ -24,7 +24,7 @@
 		"notes": "https://medium.com/@satoshilabs/trezor-firmware-1-3-4-enables-ssh-login-86a622d7e609"
 	},
 	{
-		"required": false,
+		"required": true,
 		"version": [1, 3, 3],
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
