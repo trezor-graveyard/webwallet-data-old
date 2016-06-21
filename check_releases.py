@@ -64,7 +64,7 @@ def check_firmware():
             if ret.status_code != 200:
                 print("Missing firmware file", firmware)
                 ok = False
-                data = ''
+                data = b''
             else:
                 data = bytes(ret.text, 'utf-8')
 
@@ -72,7 +72,7 @@ def check_firmware():
             if not os.path.exists(firmware[len('/data/'):]):
                 print("Missing firmware file", firmware)
                 ok = False
-                data = ''
+                data = b''
             else:
                 data = open(firmware[len('/data/'):], 'r').read()
 
