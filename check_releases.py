@@ -74,7 +74,7 @@ def check_firmware():
                 ok = False
                 data = b''
             else:
-                data = open(firmware[len('/data/'):], 'r').read()
+                data = open(firmware[len('/data/'):], 'rb').read()
 
         if not data.startswith(binascii.hexlify(b'TRZR')):
             print("Corrupted file header:", firmware)
