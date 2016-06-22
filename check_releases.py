@@ -54,12 +54,12 @@ def check_firmware():
                 data = bytes(ret.text, 'utf-8')
 
         else:
-            if not os.path.exists(firmware[len('/data/'):]):
+            if not os.path.exists(firmware[len('data/'):]):
                 print("Missing firmware file", firmware)
                 ok = False
                 data = b''
             else:
-                data = open(firmware[len('/data/'):], 'rb').read()
+                data = open(firmware[len('data/'):], 'rb').read()
 
         if not data.startswith(binascii.hexlify(b'TRZR')):
             print("Corrupted file header:", firmware)
