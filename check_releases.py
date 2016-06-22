@@ -5,42 +5,27 @@ import json
 import requests
 import binascii
 
-def check_plugin():
-    patterns = ['browser-plugin-trezor-%(version)s.i386.rpm',
-                'browser-plugin-trezor-%(version)s.x86_64.rpm',
-                'trezor-plugin-%(version)s.dmg',
-                'BitcoinTrezorPlugin-%(version)s.msi',
-                'browser-plugin-trezor_%(version)s_i386.deb',
-                'browser-plugin-trezor_%(version)s_amd64.deb']
+def check_bridge():
+    patterns = ['trezor-bridge-%(version)s-1.i386.rpm',
+                'trezor-bridge-%(version)s-1.x86_64.rpm',
+                'trezor-bridge-%(version)s-win32-install.exe',
+                'trezor-bridge-%(version)s.pkg',
+                'trezor-bridge_%(version)s_amd64.deb',
+                'trezor-bridge_%(version)s_i386.deb']
 
-    versions = os.listdir('plugin')
-    versions.sort()
+    v = open('bridge/latest.txt', 'r').read().strip()
+    print("Expected latest bridge version: %s" % v)
 
-    ok = True
-    latest = None
-    for v in versions:
-        if not os.path.isdir(os.path.join('plugin', v)):
-            continue
-        if v == 'test': # skip test directory
-            continue
+    if not os.path.isdir(os.path.join('bridge', v)):
+        return False
 
-        latest = v
-        print("Checking files for version", v)
-        print("---------------------------------")
-
-        for p in patterns:
-            expected = p % {'version': v}
-            if not os.path.isfile(os.path.join('plugin', v, expected)):
-                ok = False
-                print("Missing file %s/%s" % (v, expected))
-
-    print("Checking latest.txt")
-    print("-------------------")
-
-    latest_file = open('plugin/latest.txt', 'r').read().strip()
-    if latest != latest_file:
-        print("Expected latest.txt: %s, got %s" % (latest, latest_file))
-        ok = False
+    print("Checking files for bridge version", v)
+    print("----------------------------------------")
+    for p in patterns:
+        expected = p % {'version': v}
+        print(expected)
+        if not os.path.isfile(os.path.join('bridge', v, expected)):
+            print("Missing file %s/%s" % (v, expected))
 
     return ok
 
@@ -88,7 +73,7 @@ def check_firmware():
 
 if __name__ == '__main__':
     ok = True
-    ok &= check_plugin()
+    ok &= check_bridge()
     ok &= check_firmware()
 
     if ok:
