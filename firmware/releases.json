@@ -4,7 +4,7 @@
 		"version": [1, 3, 6],
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
-		"min_bridge_version": [1, 1, 4],
+		"min_bridge_version": [1, 1, 5],
 		"min_extension_version": [1, 0, 15],
 		"url": "data/firmware/trezor-1.3.6.bin.hex",
 		"fingerprint": "03b559a758961b2bfd4443e6c36c10025268cf033ecd376fdd7a79ff658bf511",
