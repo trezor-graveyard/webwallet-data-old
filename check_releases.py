@@ -35,13 +35,26 @@ def check_firmware():
 
     ok = True
     releases = json.loads(open('firmware/releases.json', 'r').read())
+
+    # Find out the latest firmware release
+    latest = [0, 0, 0]
     for r in releases:
+        latest = max(latest, r['version'])
+
+    print("Latest firmware: %s" % '.'.join(str(x) for x in latest))
+
+    for r in releases:
+        # Check only latest firmware, others may not be available yet
+        if r['version'] != latest:
+            continue
+
         firmware = r['url']
         version = '.'.join([ str(x) for x in r['version'] ])
 
         if version not in firmware:
             print("Missing '%s' in '%s'" % (version, firmware))
             ok = False
+            continue
 
         print("Checking", firmware)
         if firmware.startswith('http'):
@@ -49,7 +62,7 @@ def check_firmware():
             if ret.status_code != 200:
                 print("Missing firmware file", firmware)
                 ok = False
-                data = b''
+                continue
             else:
                 data = bytes(ret.text, 'utf-8')
 
@@ -57,17 +70,19 @@ def check_firmware():
             if not os.path.exists(firmware[len('data/'):]):
                 print("Missing firmware file", firmware)
                 ok = False
-                data = b''
+                continue
             else:
                 data = open(firmware[len('data/'):], 'rb').read()
 
         if not data.startswith(binascii.hexlify(b'TRZR')):
             print("Corrupted file header:", firmware)
             ok = False
+            continue
 
         if len(data) / 2 > 512*1024 - 32*1024: # Firmware - header - signatures
             print("File size is over limit:", firmware)
             ok = False
+            continue
 
     return ok
 
