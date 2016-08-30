@@ -4,6 +4,7 @@ import os
 import json
 import requests
 import binascii
+import struct
 
 def check_bridge():
     patterns = ['trezor-bridge-%(version)s-1.i386.rpm',
@@ -76,6 +77,13 @@ def check_firmware():
 
         if not data.startswith(binascii.hexlify(b'TRZR')):
             print("Corrupted file header:", firmware)
+            ok = False
+            continue
+
+        codelen = struct.unpack('<I', binascii.unhexlify(data[8:16]))
+        codelen = codelen[0]
+        if codelen + 256 != len(data) // 2:
+            print("Sanity check for firmware size failed (is %d bytes, should be %d bytes)" % (codelen + 256, len(data) // 2))
             ok = False
             continue
 
