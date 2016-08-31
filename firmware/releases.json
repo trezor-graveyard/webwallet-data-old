@@ -8,7 +8,7 @@
 		"min_extension_version": [1, 0, 15],
 		"url": "data/firmware/trezor-1.4.0.bin.hex",
 		"fingerprint": "5764715dbcf8ed88bc0ae1c2f715277f22b67f26c15e1f7543b2b44913b5c255",
-		"changelog": "* Stable release, optional update\n* U2F support\n* Ethereum support\n* GPG decryption support",
+		"changelog": "* Stable release, optional update\n* U2F support\n* Ethereum support\n* GPG decryption support\n* Zcash support",
 		"notes": "https://blog.trezor.io/secure-two-factor-authentication-with-trezor-u2f-e940fd5a60af"
 	},
 	{
