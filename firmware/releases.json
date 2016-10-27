@@ -1,6 +1,17 @@
 [
 	{
 		"required": false,
+		"version": [1, 4, 1],
+		"min_version": [0, 0, 0],
+		"min_plugin_version": [1, 0, 5],
+		"min_bridge_version": [1, 1, 5],
+		"min_extension_version": [1, 0, 15],
+		"url": "data/firmware/trezor-1.4.1.bin.hex",
+		"fingerprint": "92636493f76f352213e681bbc26eb3a8844f7b8a3044214b65c3c2c10a0f788c",
+		"changelog": "* Stable release, optional update\n* Support for Zcash JoinSplit transactions\n* Enable device lock after 10 minutes of inactivity\n* Enable device lock by pressing left button for 2 seconds\n* Confirm dialog for U2F counter change"
+	},
+	{
+		"required": false,
 		"version": [1, 4, 0],
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
