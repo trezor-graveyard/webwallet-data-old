@@ -1,6 +1,17 @@
 [
 	{
 		"required": false,
+		"version": [1, 4, 2],
+		"min_version": [0, 0, 0],
+		"min_plugin_version": [1, 0, 5],
+		"min_bridge_version": [1, 1, 5],
+		"min_extension_version": [1, 0, 15],
+		"url": "data/firmware/trezor-1.4.2.bin.hex",
+		"fingerprint": "a4b39f01bd134d01d7534821445bf779dbe6c25f0fcf7c7cb285a79b17f25e0a",
+		"changelog": "* Stable release, optional update\n* New Matrix-based recovery method\n* Minor Ethereum fixes (including EIP-155 replay protection)\n* Minor USB, U2F and GPG fixes"
+	},
+	{
+		"required": false,
 		"version": [1, 4, 1],
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
