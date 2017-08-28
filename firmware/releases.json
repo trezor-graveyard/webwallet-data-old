@@ -1,6 +1,6 @@
 [
 	{
-		"required": false,
+		"required": true,
 		"version": [1, 5, 2],
 		"min_version": [0, 0, 0],
 		"min_plugin_version": [1, 0, 5],
