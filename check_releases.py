@@ -30,12 +30,12 @@ def check_bridge():
 
     return ok
 
-def check_firmware():
+def check_firmware(model):
     print("Checking firmware availability")
     print("------------------------------")
 
     ok = True
-    releases = json.loads(open('firmware/releases.json', 'r').read())
+    releases = json.loads(open('firmware/' + str(model) +'/releases.json', 'r').read())
 
     # Find out the latest firmware release
     latest = [0, 0, 0]
@@ -75,29 +75,46 @@ def check_firmware():
             else:
                 data = open(firmware[len('data/'):], 'rb').read()
 
-        if not data.startswith(binascii.hexlify(b'TRZR')):
+        start = b'TRZR' if model == 1 else b'TRZV'
+
+        if not data.startswith(binascii.hexlify(start)):
             print("Corrupted file header:", firmware)
             ok = False
             continue
 
-        codelen = struct.unpack('<I', binascii.unhexlify(data[8:16]))
-        codelen = codelen[0]
-        if codelen + 256 != len(data) // 2:
-            print("Sanity check for firmware size failed (is %d bytes, should be %d bytes)" % (codelen + 256, len(data) // 2))
-            ok = False
-            continue
+        if model == 1:
+            codelen = struct.unpack('<I', binascii.unhexlify(data[8:16]))
+            codelen = codelen[0]
+            if codelen + 256 != len(data) // 2:
+                print("Sanity check for firmware size failed (is %d bytes, should be %d bytes)" % (codelen + 256, len(data) // 2))
+                ok = False
+                continue
 
-        if len(data) / 2 > 512*1024 - 32*1024: # Firmware - header - signatures
-            print("File size is over limit:", firmware)
-            ok = False
-            continue
+            if len(data) / 2 > 512*1024 - 32*1024: # Firmware - header - signatures
+                print("File size is over limit:", firmware)
+                ok = False
+                continue
+
+        if model == 2:
+            vendorlen = struct.unpack('<I', binascii.unhexlify(data[8:16]))
+            vendorlen = vendorlen[0]
+            headerlen = struct.unpack('<I', binascii.unhexlify(data[8 + vendorlen*2:16 + vendorlen*2]))
+            headerlen = headerlen[0]
+            codelen = struct.unpack('<I', binascii.unhexlify(data[24 + vendorlen*2:32 + vendorlen*2]))
+            codelen = codelen[0]
+
+            if codelen + vendorlen + headerlen!= len(data) // 2:
+                print("Sanity check for firmware size failed (is %d bytes, should be %d bytes)" % (codelen + vendorlen + headerlen, len(data) // 2))
+                ok = False
+                continue
 
     return ok
 
 if __name__ == '__main__':
     ok = True
     ok &= check_bridge()
-    ok &= check_firmware()
+    ok &= check_firmware(1)
+    ok &= check_firmware(2)
 
     if ok:
         print("EVERYTHING IS OK")
