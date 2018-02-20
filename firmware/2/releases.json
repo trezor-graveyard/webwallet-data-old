@@ -1,0 +1,9 @@
+[
+	{
+		"required": true,
+		"version": [0, 1, 0],
+		"url": "data/firmware/2/trezor-0.1.0.bin.hex",
+		"fingerprint": "79371ee2ed2db8489aa4a5bce6907c24afc6de47e9658fef4cc12e2d902d9c51",
+		"changelog": "* Beta Trezor2 firmware"
+	}
+]
