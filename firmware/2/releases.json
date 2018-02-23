@@ -4,7 +4,7 @@
 		"version": [2, 0, 1],
 		"min_bridge_version": [2, 0, 6],
 		"url": "data/firmware/2/trezor-2.0.1.bin.hex",
-		"fingerprint": "c73dcaf2e8035b12b56c8df476990272e43c7bb7e7e686196bc5dccd83647698",
+		"fingerprint": "dec9ed547fd74632a4ce1d0d74fe803953713570034ee034c2566395b037de40",
 		"changelog": "* snapshot from master"
 	}
 ]
