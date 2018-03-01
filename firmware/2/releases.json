@@ -1,26 +1,10 @@
 [
 	{
 		"required": true,
-		"version": [2, 0, 4],
+		"version": [2, 0, 5],
 		"min_bridge_version": [2, 0, 7],
-		"url": "data/firmware/2/trezor-2.0.4.bin.hex",
-		"fingerprint": "054c0e4bf74b19d30ef91ef593eefa8eb7c05497c98afdfd243663dcd11ebe18",
-		"changelog": "* snapshot from master"
-	},
-	{
-		"required": true,
-		"version": [2, 0, 2],
-		"min_bridge_version": [2, 0, 7],
-		"url": "data/firmware/2/trezor-2.0.2.bin.hex",
-		"fingerprint": "d87a5cb57a2fd166e36d0ba0e651125a2a2d019d73d8801327252126805b17c3",
-		"changelog": "* snapshot from master"
-	},
-	{
-		"required": true,
-		"version": [2, 0, 1],
-		"min_bridge_version": [2, 0, 6],
-		"url": "data/firmware/2/trezor-2.0.1.bin.hex",
-		"fingerprint": "dec9ed547fd74632a4ce1d0d74fe803953713570034ee034c2566395b037de40",
-		"changelog": "* snapshot from master"
+		"url": "data/firmware/2/trezor-2.0.5.bin.hex",
+		"fingerprint": "851172eab96c07bf9efb43771cb0fd14dc0320a68de047132c7bd787a1ad64e9",
+		"changelog": "* first public release"
 	}
 ]
